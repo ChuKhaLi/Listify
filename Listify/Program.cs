@@ -1,3 +1,5 @@
+using System;
+
 namespace Listify
 {
     public class Program
@@ -15,6 +17,8 @@ namespace Listify
             // Configure the HTTP request pipeline.
 
             app.UseAuthorization();
+
+            app.MapGet("/", () => Results.Ok("Hello, world"));
 
             app.MapGet("/listify", (int begin, int end, int index) =>
             {
